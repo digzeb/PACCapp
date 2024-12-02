@@ -1,9 +1,6 @@
-import 'dart:isolate';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:testt/services/auth/auth_service.dart';
 import 'package:provider/provider.dart';
 
@@ -34,16 +31,24 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Messages'),
+        title: Text(
+          'Messages',
+        style: const TextStyle(color: Colors.white),
+        ),
+        
+        
+        backgroundColor: Colors.grey[900],
         actions: [
           // logout button
           IconButton(
             onPressed: signOut, 
             icon: const Icon(Icons.logout),
+            color: Colors.white,
             )
         ],
         ),
         body: _buildUserList(),
+        backgroundColor: Colors.grey[900],
     );
   }
 
@@ -74,7 +79,11 @@ class _HomePageState extends State<HomePage> {
     // display aal except current user
     if (_auth.currentUser!.email != data['email']) {
       return ListTile(
-        title: Text(data['email']),
+        title: Text(data['email'],
+        style: const TextStyle(color: Colors.white,
+        fontSize: 16,
+        ),
+        ),
         onTap: () {
           // pass user ID to chat
           Navigator.push(
