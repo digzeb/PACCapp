@@ -104,7 +104,7 @@ Widget _buildMessageItem(DocumentSnapshot document) {
         Text(
           data['senderEmail'] ?? 'Unknown', // Fallback in case of null
           style: TextStyle(fontSize: 12, 
-          color: Colors.white,
+          color: const Color.fromARGB(255, 255, 255, 255),
           ), // Style for email
         ),
         Container(
@@ -128,29 +128,47 @@ Widget _buildMessageItem(DocumentSnapshot document) {
 
   //build input
 Widget _buildMessageInput() {
-  return Row(
-    children: [
-      // Text field
-      Expanded(
-        child: TextField(
-          controller: _messageController,
-          decoration: const InputDecoration(
-            hintText: 'PACC Message',
+  return Padding(
+    padding: const EdgeInsets.all(10.0), // Adds space around the entire row
+    child: Row(
+      children: [
+        // Text field
+        Expanded(
+          child: TextField(
+            controller: _messageController,
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 16,
+            ),
+            decoration: const InputDecoration(
+              hintText: 'PACC Message',
+              hintStyle: TextStyle(color: Colors.grey),
+              contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(10)),
+                borderSide: BorderSide(color: Colors.grey),
+              ),
+              focusedBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(10)),
+                borderSide: BorderSide(color: Color.fromARGB(255, 66, 151, 220)),
+              ),
+            ),
+            obscureText: false,
           ),
-          obscureText: false,
         ),
-      ),
-      // Send button
-      IconButton(
-        onPressed: sendMessage,
-        icon: const Icon(
-          Icons.arrow_upward,
-          color: MaterialColor.blue[100],
-          size: 45,
+        // Send button
+        IconButton(
+          onPressed: sendMessage,
+          icon: const Icon(
+            Icons.arrow_upward,
+            color: Color.fromARGB(255, 66, 151, 220),
+            size: 45,
+          ),
         ),
-      ),
-    ],
+      ],
+    ),
   );
 }
+
 
 }
