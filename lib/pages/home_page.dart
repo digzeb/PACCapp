@@ -3,7 +3,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:testt/services/auth/auth_service.dart';
 import 'package:provider/provider.dart';
-
 import 'chat_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -23,7 +22,7 @@ class _HomePageState extends State<HomePage> {
     // auth service
     final authService = Provider.of<AuthService>(context, listen: false);
     authService.signOut();
-    
+    // navigate to login page
   }
   
 
