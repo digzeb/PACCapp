@@ -34,7 +34,7 @@ class _LoginPageState extends State<LoginPage> {
             e.toString(),
           ),
           ),
-          
+        
         
       );
     }
@@ -53,7 +53,7 @@ class _LoginPageState extends State<LoginPage> {
               children: [
                 const SizedBox(height: 90),
                 Image.asset(
-                  'assets/PACC.jpg',
+                  'assets/PACC.jpg',//Our logo shown above the login
                   width: 150,
                   height: 150,
                   ),
@@ -61,7 +61,7 @@ class _LoginPageState extends State<LoginPage> {
               
                 const SizedBox(height: 70),
             
-              //welcome
+              //welcome Text
               const Text("Welcome To PACC",
               style: TextStyle(
                 fontSize: 16,
@@ -73,7 +73,7 @@ class _LoginPageState extends State<LoginPage> {
 
               const SizedBox(height: 5),
                     
-              //email
+              //email button
               MyTextField(
                 controller: emailController, 
                 hintText: 'Email', 
@@ -81,7 +81,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
             
                     
-              //password
+              //password button
               MyTextField(
                 controller: passwordController, 
                 hintText: 'Password', 
@@ -92,7 +92,7 @@ class _LoginPageState extends State<LoginPage> {
               const SizedBox(height: 25),
 
               MyButton(onTap: signIn, text: "Sign In")
-              //register button
+              //register button to allow the user to sign up
 
               ,const SizedBox(height: 15),
               Row(

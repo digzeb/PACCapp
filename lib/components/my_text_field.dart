@@ -13,7 +13,7 @@ class MyTextField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
+    return TextField( //this is the text field and its properties for the login page
     controller: controller,
     obscureText: obscureText,
     decoration: InputDecoration(

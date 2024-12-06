@@ -36,18 +36,18 @@ class AuthService extends ChangeNotifier{
       UserCredential userCredential = await _firebaseAuth.createUserWithEmailAndPassword(
         email: email,
         password: password,
-        );
+        );//sign up
 
         // after creating user, new doc for user
         _firestore.collection('users').doc(userCredential.user!.uid).set({
           'uid': userCredential.user!.uid,
           'email': email
-        });
+        });//set options
         
       return userCredential;
     } on FirebaseAuthException catch (e) {
       throw Exception(e.code);
-    } 
+    } //catch error and throw exception
   }  
   // sign out
   Future<void> signOut() async {

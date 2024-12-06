@@ -11,7 +11,7 @@ Future<void> main() async{
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(
     ChangeNotifierProvider(create: (context) => AuthService(), child: const MyApp(),)
-    
+    // this is the main app widget
     );
 }
 

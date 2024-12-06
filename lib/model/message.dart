@@ -24,5 +24,5 @@ class Message {
       'timestamp': timestamp,
     };
   }
-
+//This communicates with the database to get the messages
 }
